@@ -4,13 +4,13 @@ export const CardHolder = memo(({index/* ,show, setShow */,container}:any) => {
    const [show, setShow] = useState(false); 
 const cardRef :any =useRef(null)
 const width = container?.current?.offsetWidth
-const x : any = cardRef?.current?.offsetHeight
+//const x : any = cardRef?.current?.offsetHeight
 
 const test = () =>{
 
 
 
-    const drop = document.getElementById(`drop_${index}`)
+    //const drop = document.getElementById(`drop_${index}`)
 
     console.log("cardHolder Width",cardRef?.current?.offsetWidth)
     console.log("cardHolder left",cardRef?.current?.offsetLeft)

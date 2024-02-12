@@ -1,4 +1,3 @@
-import React from 'react'
 
 export const RegistrationForm =({loginToggle}:any) => {
     return (
