@@ -17,7 +17,9 @@ export const CheckSvg = () =>{
 
 export const Landing = () => {
   return (
-    <div className='flex flex-col w-full gap-2 overflow-x-hidden relative'>
+    <div className='flex flex-col w-full gap-2 overflow-x-hidden relative 
+    
+    '>
       <Header />
       <Cards />
       <OurAppl displ={ourapp} />

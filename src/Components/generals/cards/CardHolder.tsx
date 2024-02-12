@@ -61,8 +61,10 @@ const test = () =>{
 
        <div  id={`drop_${index}`} style={{width:width, left:cardRef?.current?.offsetWidth * index * -1}}
         className={`mr-9 transition-h duration-300  h-0 overflow-hidden ${show && "h-[300px] "} 
-        absolute top-full ws-[${width}px]  border border-red-950`}>
+        absolute top-full ws-[${width}px]  `}>
+         <div className="h-full border border-red-500" >
           {`card ${index}`}
+          </div> 
         </div>
     </div>
     </div>
