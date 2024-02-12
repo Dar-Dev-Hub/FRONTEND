@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body{
+    max-width: 100vw;
+      overflow-x: hidden;
+}
+
+.scrollUp,.scrollDown{
+  background-color: white !important;
+}
