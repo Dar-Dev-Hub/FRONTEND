@@ -8,7 +8,7 @@ export const OurComapny = () => {
     <>
         <div className='relative
         mb-5
-            pt-[90px]
+            pt-[100px]
             py-2
             w-full h-screen gap-2
             flex justify-center items-center flex-col overflow-hidden' >
@@ -31,24 +31,20 @@ export const OurComapny = () => {
 /*  OUR COMPANY OBJECT PARTS */
 const buisnessModel = {
     
-        title: <span> <span className='text-red-500 font-extrabold'>BUSINESS MODEL OF 
-        </span> Global Adkach </span>,
+        title: <span> <span className='text-red-500 font-extrabold'>Business Model de 
+        </span> Netverse </span>,
         text:[
             {   
-                text:  `GLOBAL ADKACH introduces a smart idea to the market, and introduces the ADCOIN APP and ADKACH WEB, which are the technical support that allows to take advantage of this idea.
-                GLOBAL ADKACH is an advertising medium that provides a service for advertisers, which is to deliver their ads to the target audience in a fast, easy and most effective way.`,
+                text:  `Notre modèle d'affaires repose sur la distribution de packages de formation, chaque pack offrant des avantages spécifiques.`,
             },
             {
                 
-                text:`The user of the ADCOIN APP and ADKACH WEB applications provides a service to GLOBAL ADKACH by subscribing to its applications, The more users of the applications, the greater their value in the market؛ The user also provides the service of viewing ads via ADCOIN APP, which helps to attract more ads.`
+                text:`Du recrutement direct à la progression de votre pack, en passant par des commissions basées sur les niveaux de réseau,`
             },
             {   
-                text:  `GLOBAL ADKACH appreciates the important and effective role of users in building its business and shares with them 85% of its profits in exchange for their services.`,
+                text:  `Netverse offre des opportunités diversifiées pour maximiser vos gains. Le parrainage est le seul moyen d'entrer dans notre communauté, garantissant une croissance organique et des relations solides.`,
             },
-            {
-                
-                text:`n fact, this model may not be completely new, as there are companies that work implicitly according to this model, but GLOBAL ADKACH is the first company to recognize and adopt it as a basic economic model for its business and is working to develop and theorize it.`
-            },
+            
            
         ],
         classNames:"text-white justify-center  items-center relative",
@@ -72,7 +68,7 @@ const ourApp = {
         },
        
     ],
-    sideImg:"https://adkach.com/wp-content/uploads/2022/08/OUR-APPS-1.png",
+    sideImg:"https://github.com/jassemb/netverseimage/blob/main/netverse_pohne-removebg-preview.png?raw=true",
    bgImage:"bg-niceword",
    other: <div className=' 
   absolute w-full h-full left-0 top-0 z-[-1] bg-[#2f2e36] 
@@ -80,43 +76,41 @@ opacity-90' ></div>
    
 }
 const smartIdea ={
-    title: <span > SMART IDEA
+    title: <span > Notre Smart Idea
         <br />
-    From
-   <span className='pl-2 font-playFait text-red-500 font-extrabold italic' >Global Adkach</span> </span>,
+     
+   <span className='pl-2 font-playFait text-red-500 font-extrabold italic' >Netverse</span> </span>,
     text:[
         {
-            text:  "GLOBAL ADKACH It is based on a simple idea, but it is considered a revolution in the smartphone business."
+            text:  "Notre idée intelligente repose sur la fusion du marketing de réseau avec un produit numérique innovant et des formations de qualité."
         },
         {
-            text:`Where every person who owns a smartphone can rent his phone screen to the company and turn it into an advertising platform, by subscribing to our applications and watching ads through them, in return the company shares 85% of its revenues with all users.`
+            text:`Netverse ne se limite pas à une simple plateforme en ligne; c'est une communauté où la croissance personnelle et professionnelle sont au cœur de chaque interaction.`
         },
         {
-            text:  "Sharing revenue with users means better “user experience” and more loyalty from users, thus more use of our apps and more ad view, which means more ads, more revenue and more revenue sharing with users."   ,
+            text:  "Notre approche intelligente vise à créer une synergie entre le virtuel et le réel, offrant des opportunités illimitées à nos partenaires."   ,
         },
-        {
-            text:`It is a simple and smart idea for a permanent cycle of profit without effort, without experience and at the lowest investment cost.`
-        }
+       
     ],
     bgImage:"bg-ourCompanySmartIdea",
     classNames:" justify-start  items-start pl-9"
 }
 
 const ImagesCaroucel = [
-    "https://adkach.com/wp-content/uploads/2022/08/STEPS.webp" ,
-    "https://adkach.com/wp-content/uploads/2022/08/STEPS.webp" ,
-    "https://adkach.com/wp-content/uploads/2022/08/STEPS.webp" ,
-    "https://adkach.com/wp-content/uploads/2022/08/STEPS.webp" ,
+    "https://github.com/jassemb/netverseimage/blob/main/c1.jpg?raw=true" ,
+    "https://github.com/jassemb/netverseimage/blob/main/c1.jpg?raw=true",
+    "https://github.com/jassemb/netverseimage/blob/main/c1.jpg?raw=true" ,
+    "https://github.com/jassemb/netverseimage/blob/main/c1.jpg?raw=true" ,
 ]
 const newEquation ={
-    title:"NEW EQUATION in business",
+    title:"Notre Nouveau Business dans le Monde Virtuel",
     text:[
             {
-            text:"The smart phone screen rental service from GLOBAL ADKACH is a new offer for users and advertisers, within the framework of the sharing economy.",
+            text:"Netverse redéfinit le marketing de réseau avec un focus particulier sur les produits numériques et les formations. Notre modèle d'affaires novateur s'appuie sur la vente en réseau, créant ainsi des opportunités lucratives pour chaque partenaire.",
             },
-            {text:"Our company considered as a new and pioneering model for rent investments within the sharing economy through smartphone applications: Resource Sharing – Profit Sharing."
+            {text:"En unissant le potentiel du marketing de réseau avec des produits digitaux de qualité, Netverse façonne l'avenir des opportunités professionnelles en ligne."
             },
-            {text:"The notion of participation that characterizes this economy and that our company adopts, changed the roles in the economic equation with regard to the relationship between companies and customers, as the customer became a service provider and not only a beneficiary of it."
+            {text:" "
             }
     ],
     classNames:" justify-end  items-end pr-9",
@@ -125,7 +119,7 @@ const newEquation ={
     
   }
 const whoareWe ={
-    title:"WHO ARE WE?",
+    title:"Qui Sommes-Nous?",
     subtitle: <span className=' text-3xl   
     '>
         <NetVerse  net={{size:"1.8rem"}}  V={{size:"2.4rem"}} 
@@ -135,12 +129,9 @@ const whoareWe ={
     company!</span>,
     text:[
             {
-            text:"GLOBAL ADKACH is a global company of smartphone business, it is an advertising medium between companies and the public through the development of web applications software and smartphone applications.",
+            text:"Netverse, c'est bien plus qu'une plateforme en ligne; c'est une communauté dynamique de personnes partageant les mêmes idées,désireuses de réussir et de grandir ensemble. Nous sommes déterminés à créer des opportunités significatives dans le monde virtuel,  en unissant nos forces et en favorisant la prospérité collective.",
             },
-            {text:"GLOBAL ADCASH is a subsidiary of the parent company GLOBAL GOLDEN AXE, which is specialized in e-commerce e-marketing and digital projects."
-            },
-            {text:"The Operating principle of GLOBAL ADKACH is to integrate the advertising sector with the work of smartphone applications within the framework of the profit sharing system."
-            }
+            
     ],
     footer: <button className='  
             group zz w-fit  relative  self-center
@@ -161,23 +152,29 @@ const whoareWe ={
 
 const ourVision = {
     part1:{
-        title:"Our vision",
+        title:"Notre Vision",
         text:[
             {
-            text:"GLOBAL ADKACH the first online advertising medium for the next 5 years, which provides passive income for all layers of society and helps the largest number of smartphone users across the world to achieve financial security.",
+            text:"Chez Netverse, nous aspirons à être la plateforme de référence en matière de croissance personnelle et de succès partagé. Nous visons à créer un environnement où chaque partenaire peut atteindre son potentiel maximal, propulsé par notre engagement envers l'excellence et l'innovation.",
             },
         ],
   
 },
 part2:{
-    title:"Our Objectives",
+    title:"Nos Objectifs",
     text:[
         {
-        text:"Contribute to the transition of the advertising market from centralization to decentralization and ending the monopoly of advertising profits by companies and making it the right of the largest possible number of people across the world, with the simplest resources and the least investment.",
+        text:"Faciliter l'accès à des formations de qualité.",
         },
         {
-            text:"Spreading the culture of sustainable investment in the available resources within the field of free and smart business via the Internet.",
-            },
+            text:"Établir un réseau solide et prospère.",
+        },
+        {
+            text:"Fournir des opportunités de revenus stables et croissants pour nos partenaires.",
+        },
+        {
+            text:"Devenir une référence dans le domaine du marketing de réseau virtuel.",
+        },
     ],
     classNames:"text-black",
   

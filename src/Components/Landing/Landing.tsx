@@ -32,17 +32,14 @@ export const Landing = () => {
 
 /* PART 3 */
 const ourapp = {
-  title:"WHAT ARE OUR APPLICATIONS",
-  subtitle:<span className='text-red-600'> and how do they work?</span> ,
+  title:"Application Web et Applications Mobiles",
+  subtitle:<span className='text-red-600'> et comment fonctionnent-ils ??</span> ,
   text:[
       {
-          title: <span className='flex ' > <CheckSvg/> ADCOIN</span> ,
-          text: `Smartphone APP from GLOBAL ADKACH, it displays ads on the user’s smartphone screen`,
-      },
-      {
-          title: <span className='flex' > <CheckSvg/> ADCOIN</span> ,
-          text:`WEB application from GLOBAL ADKACH, it organizes the profit sharing process with subscribers.`
-      }
+          title: <span className='flex ' > <CheckSvg/> Netverse</span> ,
+          text: "Netverse vous offre la liberté de rester connecté où que vous soyez. Notre application web et nos applications mobiles, disponibles sur Android et iOS, vous permettent d'accéder à vos formations, outils de travail et opportunités de réseau à tout moment. Restez informé, parrainez des partenaires et suivez vos bénéfices, le tout à portée de main."
+        },
+      
   ],
   footer: <div className='flex self-center justify-start items-center gap-2'>
   <div className="   ">
@@ -59,7 +56,7 @@ const ourapp = {
     </figure>
   </div>
 </div>,
-  sideImg:"https://adkach.com/wp-content/uploads/2022/08/OUR-APPS-1.png",
+  sideImg:"https://github.com/jassemb/netverseimage/blob/main/netverse_pohne.png?raw=true",
   bgIxmage:"bg-subs-bg",
   
 }
@@ -86,7 +83,7 @@ const subscription ={
               '>more info
     </div>
   </button>,
-  sideImg:"https://adkach.com/wp-content/uploads/2022/08/STEPS.webp",
+  sideImg:"https://github.com/jassemb/netverseimage/blob/main/test.png?raw=true",
   bgIxmage:"bg-subs-bg",
   other: <div className=' 
   absolute w-full h-full left-0 top-0 z-[-1] bg-[#2f2e36] 

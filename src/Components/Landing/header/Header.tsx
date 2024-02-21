@@ -18,27 +18,28 @@ import { Link } from "react-router-dom"
                 <span className='text-black 
                  uppercase w-fit
                 h-fit 
-                text-[3rem] font-bold 
+                text-[2rem] font-bold 
                 max-lg:text-[2rem]
                 max-md:text-[1rem]
                 '>
-                    smartphone business company
+                    Bienvenue chez Netverse, une fusion entre 
                 </span>
                 <span className='text-black 
                 
                  uppercase w-fit
                 h-fit 
-                text-[3rem] font-bold 
-                max-md:text-[2rem]
+                text-[2rem] font-bold 
+                max-md:text-[1rem]
                 '>
-                    New equation in business
+                    le monde du marketing de réseau et l'univers virtuel.
                 </span>
                 <span className='max-md:bg-red-50 max-md:bg-opacity-50 
                  text-black max-md:text-center max-md:text-black text-2xl font-thin w-2/3
                  max-md:w-full
                 '>
-                    we integrate the advertising sector with the work of smartphone apps within the framework of the profit-sharing system
-                </span>
+                Nous fournissons des opportunités tangibles en proposant des packages de formation et d'outils de travail concrets. Dès votre inscription, choisissez parmi nos packs de démarrage, chacun offrant des formations adaptées à vos besoins, du niveau débutant à l'expert. Chez Netverse, l'aventure commence virtuellement, mais les bénéfices sont bien réels. Rejoignez-nous, parrainez d'autres partenaires et partagez les succès d'un réseau de marketing unique.
+                Chez Netverse, l'aventure commence virtuellement, mais les bénéfices sont bien réels. Rejoignez-nous, parrainez d'autres partenaires et partagez les succès d'un réseau de marketing unique.
+                                </span>
                 <Link to='/landing/our-company' className='   group zz w-fit  relative 
                 bg-secondary overflow-hidden
                 hover:border-primaryy
