@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { CardHolder } from "./CardHolder"
-export const Cards = () => {
+export const Cards = ({cardInfo}) => {
 
 
 const container :any = useRef(null)
@@ -23,11 +23,12 @@ const container :any = useRef(null)
       ' 
       id='card_Container'
       >
-          { Array(4).fill(null).map((_,i)=>{
+          { cardInfo.map((card,i:number)=>{
             return  <CardHolder 
             container={container} 
              key={i} 
              index={i} 
+             cardinfo={card}
               />
           })
         }

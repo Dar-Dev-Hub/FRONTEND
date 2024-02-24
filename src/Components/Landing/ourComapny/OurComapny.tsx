@@ -12,7 +12,7 @@ export const OurComapny = () => {
             py-2
             w-full h-screen gap-2
             flex justify-center items-center flex-col overflow-hidden' >
-            <Curve />
+           {/*  <Curve /> */}
             <Caroucel images={ImagesCaroucel}/>
         </div>
         <SideToSide displ={whoareWe}/>

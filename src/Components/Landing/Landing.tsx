@@ -17,21 +17,47 @@ export const CheckSvg = () =>{
 
 export const Landing = () => {
   return (
-    <div className='flex flex-col w-full gap-2 overflow-x-hidden relative 
+    <div className='flex flex-col w-full
+     gap-2 overflow-x-hidden relative 
+     transition-all duration-300
     
     '>
       <Header />
-      <Cards />
+      <Cards cardInfo = {cardArray}/>
       <OurAppl displ={ourapp} />
       <OrdreList displ={subscription}/>
       <ContactUsLanding /> 
     </div>
   )
 }
+/* Cards  */
+const cardArray = [
+  {title:"Pack Startup",
+  description:["Lorsque vous parrainez avec le Pack Startup, vous bénéficiez exclusivement des recrutements directs"]
+},
+  {title:"Pack 1",
+  description:[
+    "Profitez de gains générés par le recrutement jusqu&#39;à 3 niveaux.",
+    "- Recevez des cadeaux associés à trois différents grades."
+  ]},
+  {title:"Pack 2",
+  description:[
+   " Maximisez vos gains en recrutant sur 6 niveaux.",
+" Recevez des cadeaux de trois grades différents.",
+ "Obtenez un salaire mensuel basé sur vos performances."
+  ]},
+  {title:"Pack 3",
+  description:[
+   " Débloquez le potentiel de gains sur 6 niveaux de recrutement.",
+    "Accédez à des cadeaux de trois grades distincts."
+  ]
 
+},
+]
 
 /* PART 3 */
-const ourapp = {
+const ourapp = 
+{
   title:"Application Web et Applications Mobiles",
   subtitle:<span className='text-red-600'> et comment fonctionnent-ils ??</span> ,
   text:[

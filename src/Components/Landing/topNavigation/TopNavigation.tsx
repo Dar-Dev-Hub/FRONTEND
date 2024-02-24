@@ -47,9 +47,7 @@ export const TopNavigation = () => {
     scrolY=currentYscroll
     })
   },[])
-  /* const toggleMobileMenu = () => {
-    setMobileMenuOpen(!isMobileMenuOpen);
-  }; */
+
   const translateY = 
     `   translate3d(0, ${-scrollPosition}%, 0)   `
     ;

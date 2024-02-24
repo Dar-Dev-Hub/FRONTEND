@@ -1,4 +1,4 @@
-import { Link, createBrowserRouter } from "react-router-dom";
+import { Link, Navigate, createBrowserRouter } from "react-router-dom";
 import Root, { Root2 } from "./root";
 import ErrorPage from "./errorElem";
 import { Landing } from "../Components/Landing/Landing";
@@ -11,6 +11,10 @@ export const Routes = createBrowserRouter([
       element: <Root/>,
       errorElement: <ErrorPage />,
       children:[
+        {
+          path: "/", // Catch-all route
+          element: <Navigate to="/landing" /> // Redirect to the "/landing" route
+        },
         {
           path:'/landing',
           element:<Root2/>,

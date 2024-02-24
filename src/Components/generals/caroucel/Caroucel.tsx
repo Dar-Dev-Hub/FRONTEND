@@ -36,39 +36,72 @@ export const CaroucelSideButtons = ({curr,setCurr,len}:CaroucelSideButtonsProps)
             </div> 
     )
 }
-
 interface  CaroucelImagesDisplayProps {
     images:string[],
     curr:number,
     setCurr:React.Dispatch<React.SetStateAction<number>>,
 }
 export const CaroucelImagesDisplay = ({curr,setCurr, images }: CaroucelImagesDisplayProps) => {
+    const ModImages= [...images,images[0]]
     const next =()=>{
-        setCurr((curr: number) => curr === images.length - 1 ? 0 : curr + 1)
-
-}
-    useEffect(() => {
+        setCurr((curr: number) => curr === ModImages.length  ? 0 : curr + 1)
+        }
+      useEffect(() => {
         const slideInterval = setInterval(next, 5000)
         return () => clearInterval(slideInterval)
       }, [])  
+ 
+      const transitionSmooth = () => {
+        let timeoutId
+        const cont = document.getElementById("car");
+       
+        if (cont ) {
+        if (curr === ModImages.length - 1) {
+          cont.style.transform = `translateX(-${curr*100}%)`
+          timeoutId = setTimeout(() => {
+                cont.classList.remove("transition-transform", "ease-out", "duration-[3000ms]");
+                cont.style.transform = "translateX(0%)"
+              setTimeout(()=>{
+                  cont.classList.add("transition-transform", "ease-out", "duration-[3000ms]");
+              },1000)
+              setCurr(0)
+            }, 3000);
+        } else {
+            clearTimeout(timeoutId);
+            cont.style.transform = `translateX(-${curr*100}%)`
+        }
+        }
+      };
+
+      useEffect(()=>{
+            transitionSmooth()
+      },[curr])
 
     return (
-    
+   
         <div id="car" className="  w-full h-full  flex items-center rounded-lg  transition-transform ease-out duration-[3000ms] " 
-     style={{ transform:`translateX(-${curr*100}%)`}} 
-    >   
-            {images.map((src: string, i: number) => 
-                ( <div key={i} className='min-w-full h-full flex flex-col 
+    style={{transform:`translateX(-${curr*100}%)`}}>   
+            {ModImages.map((src: string, i: number) => 
+                ( <div key={i} className='min-w-full h-full flex flex-col px-2 relative
                 items-center max-md:h-fsit ' >
                     <div className='h-[20%] mb-8 flex flex-col gap-2 items-center justify-center'>
-                        <span className={`z-10 text-7xl max-md:text-4xl font-semibold text-black w-fit  ${i === curr ?'  animate-topTrans':''}`} > 
-                         OurCompany </span>
-                        <span className={`z-10 text-5xl max-md:text-2xl font-semibold text-white w-fit  ${i === curr ?'  animate-rightTrans':''}`} > Alpha Universe </span>
+                        <span id="title " className={`z-10 text-primaryy text-7xl max-md:text-4xl font-semibold w-fit  ${i === curr &&  curr!== 0 ?'animate-topTrans':''}`} > 
+                         OurCompany {i} </span>
+                        <span id="subtitle" className={`z-10 text-5xl max-md:text-2xl font-semibold text-white w-fit  ${i === curr &&  curr!== 0 ?'animate-rightTrans':''}`} > Alpha Universe </span>
                     </div>
-                    <img src={src} className="w-fit h-[100%] " alt="..." />
+                    
+                   {/*  <img src={src} className="w-fit h-[100%] " alt="..." /> */}
+                    <div className="h-full w-[99%] 
+                    bg-cover bg-bottom
+                    absolute
+                    mx-4
+                    "
+                    style={{backgroundImage:`url(${src})`}}
+                    >
+
+                    </div>
                 </div>
 ))}
         </div>
-       
     );
 };
