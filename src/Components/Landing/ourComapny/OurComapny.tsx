@@ -59,12 +59,12 @@ const buisnessModel = {
 const ourApp = {
     title:"OUR APPLICATIONS",
     text:[
-        {   title:"ADCOIN Smartphone Application",
-            text:  `ADCOIN is a Smartphone APP from GLOBAL ADKACH It displays advertisements in the form of images or short videos on the user's smartphone screen whenever he presses the "ad" button in the application. The application is downloaded for free (trial version) from the company's website, "Google Play" or “App Store” and the ADCOIN account is activated for a small investment value that does not exceed 25 €. The ADCOIN smartphone application is linked to the web application ADKACH.`,
+        {   title:"Netverse Smartphone Application",
+            text:  `Netverse is a Smartphone APP from Netverse It displays advertisements in the form of images or short videos on the user's smartphone screen whenever he presses the "ad" button in the application. The application is downloaded for free (trial version) from the company's website, "Google Play" or “App Store” and the alphaNetverse account is activated for a small investment value that does not exceed 90dt. The alphaNetverse smartphone application is linked to the web application AlphaNetverse.`,
         },
         {
-            title:"ADCOIN Smartphone Application",
-            text:`ADKACH is a WEB application from GLOBAL ADKACH available on the company's website www.adkach.com that is activated for a small investment of no more than 175 €/ annually. This application automatically organizes the profit-sharing process with subscribers within a global system (global forced matrix).`
+            title:"Netverse Smartphone Application",
+            text:`Netverse is a WEB application from Netverse available on the company's website alphaNetverse that is activated for a small investment of no more than 90d/ annually. This application automatically organizes the profit-sharing process with subscribers within a global system (global forced matrix).`
         },
        
     ],

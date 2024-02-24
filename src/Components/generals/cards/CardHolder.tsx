@@ -45,10 +45,10 @@ const test = () =>{
         <div className="z-[4]  justify-center items-center flex flex-col  ">
           <div className="flex flex-col items-center">
             <span className="font-bold text-black text-2xl  group-hover:text-white transition-all duration-500">
-              ADKACH
+            Pack Startup
             </span>
             <span className="text-black font-playFait font-bold  group-hover:text-white transition-all duration-500">
-              Worth 25 BC weekly
+            
             </span>
           </div>
           <div className="bg-[#FFE1EE] p-[10px] rounded-full">
@@ -63,7 +63,7 @@ const test = () =>{
         className={`mr-9 transition-h duration-300  h-0 overflow-hidden ${show && "h-[300px] "} 
         absolute top-full ws-[${width}px]  `}>
          <div className="h-full border border-red-500" >
-          {`card ${index}`}
+          {`- Lorsque vous parrainez avec le Pack Startup, vous bénéficiez exclusivement des recrutements directs.`}
           </div> 
         </div>
     </div>

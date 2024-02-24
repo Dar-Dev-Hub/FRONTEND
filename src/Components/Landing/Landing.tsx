@@ -66,9 +66,9 @@ const subscription ={
   subtitle:"to start earning",
   text:[
     {
-    text:    "Download the free trial version of the ADCOIN APP from the company's website www.adkach.com or Google Play or App store, and activate your ADCOIN account for a small investment of no more than 25€.",
+    text:    "",
   },
-  {text:    "Download the free trial version of the ADCOIN APP from the company's website www.adkach.com or Google Play or App store, and activate your ADCOIN account for a small investment of no more than 25€."
+  {text:    ""
 }
   ],
   footer: <button className='  

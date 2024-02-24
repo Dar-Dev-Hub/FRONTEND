@@ -47,10 +47,10 @@ export const CaroucelImagesDisplay = ({curr,setCurr, images }: CaroucelImagesDis
         setCurr((curr: number) => curr === images.length - 1 ? 0 : curr + 1)
 
 }
-    useEffect(() => {
-        const slideInterval = setInterval(next, 5000)
-        return () => clearInterval(slideInterval)
-      }, [])  
+    // useEffect(() => {
+    //     const slideInterval = setInterval(next, 5000)
+    //     return () => clearInterval(slideInterval)
+    //   }, [])  
 
     return (
     
