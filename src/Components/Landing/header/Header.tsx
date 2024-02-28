@@ -3,7 +3,8 @@ import { Link } from "react-router-dom"
  const Header = () => {
   return (
    
-        <header className='flex  w-full header-height   
+        <header className='flex  w-full h-screen
+      
     overflow-hidden
      pb-5 
      bg-header-bg 
@@ -11,35 +12,42 @@ import { Link } from "react-router-dom"
      bg-cover 
      bg-center 
      relative' >
-             <div className='flex gap-6 flex-col max-xl:w-[40%]  ml-20 max-md:ml-0
+             <div className='flex gap-6 flex-col max-xl:w-[70%] t- ml-20 max-md:ml-0
             px-2
-            max-lg:w-[60%]
+            lg:w-[50%]
+            md:w-[100%]
+            md:ml-5 md:pt-9
+           
              max-md:w-full justify-center max-md:items-center ' >
-                <span className='text-black 
+                <span className='text-blue-500
                  uppercase w-fit
                 h-fit 
-                text-[3rem] font-bold 
+                text-[2rem] font-bold 
                 max-lg:text-[2rem]
-                max-md:text-[1rem]
+                max-md:text-[1.1rem]
                 '>
-                    smartphone business company
+                    Bienvenue chez Netverse, une fusion entre 
                 </span>
-                <span className='text-black 
+                <span className='text-blue-500
                 
                  uppercase w-fit
                 h-fit 
-                text-[3rem] font-bold 
-                max-md:text-[2rem]
+                text-[2rem] font-bold 
+                max-md:text-[1rem]
                 '>
-                    New equation in business
+                    le monde du marketing de réseau et l'univers virtuel.
                 </span>
-                <span className='max-md:bg-red-50 max-md:bg-opacity-50 
-                 text-black max-md:text-center max-md:text-black text-2xl font-thin w-2/3
-                 max-md:w-full
+                <span className='
+                max-md:bg-red-50 max-md:bg-opacity-50 
+                text-[#57534e] max-md:text-center
+                max-md:text-black text-md 
+                 w-full
+                 font-bold
                 '>
-                    we integrate the advertising sector with the work of smartphone apps within the framework of the profit-sharing system
-                </span>
-                <Link to='/landing/our-company' className='   group zz w-fit  relative 
+                Nous fournissons des opportunités tangibles en proposant des packages de formation et<br/> d'outils de travail concrets. Dès votre inscription, choisissez parmi nos packs de démarrage, <br/>chacun offrant des formations adaptées à vos besoins, du niveau débutant à l'expert. <br/>Chez Netverse, l'aventure commence virtuellement, mais les bénéfices sont bien réels.<br/> Rejoignez-nous, parrainez d'autres partenaires et partagez les succès d'un réseau de marketing unique.
+                <br/>Chez Netverse, l'aventure commence virtuellement, mais les bénéfices sont bien réels. <br/>Rejoignez-nous, parrainez d'autres partenaires et partagez les succès d'un réseau de marketing unique.
+                                </span>
+                {/* <Link to='/landing/our-company' className='   group zz w-fit  relative 
                 bg-secondary overflow-hidden
                 hover:border-primaryy
                 px-10 py-4 rounded-[30px]
@@ -60,7 +68,7 @@ import { Link } from "react-router-dom"
                     group-hover:w-full transition-all duration-[500ms]
                     
                     bg-primaryy' > </div>
-                </Link>
+                </Link> */}
 
             </div> 
 

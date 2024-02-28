@@ -6,6 +6,7 @@ export const navigation = [
   {name:"Home",path:"/landing"},
   {name:"our Company",path:"/landing/our-company"},
   {name:"Contact Us",path:"/landing/contact-us"},
+  {name:"Recrutement",path:"/landing/Recrutement"},
   {name:"Login",path:"/login"},
 ]
 
@@ -47,9 +48,7 @@ export const TopNavigation = () => {
     scrolY=currentYscroll
     })
   },[])
-  /* const toggleMobileMenu = () => {
-    setMobileMenuOpen(!isMobileMenuOpen);
-  }; */
+
   const translateY = 
     `   translate3d(0, ${-scrollPosition}%, 0)   `
     ;

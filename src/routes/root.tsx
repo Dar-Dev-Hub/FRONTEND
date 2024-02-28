@@ -14,7 +14,7 @@ export default function Root() {
     return( <>
     <TopNavigation /> 
      <Outlet/>
-     <Footer/>
+     <Footer routes={[]}/>
    </>
     )
   }

@@ -1,24 +1,28 @@
 import {  useRef, useEffect, memo, useState } from "react";
 
-export const CardHolder = memo(({index/* ,show, setShow */,container}:any) => {
+export const CardHolder = memo(({index/* ,show, setShow */,container,cardinfo}:any) => {
    const [show, setShow] = useState(false); 
 const cardRef :any =useRef(null)
 const width = container?.current?.offsetWidth
-//const x : any = cardRef?.current?.offsetHeight
+const x : any = cardRef?.current?.offsetHeight
+const cardRefWidth : any = cardRef?.current?.offsetWidth
+const descRef:any = useRef(null)
+const cardRefLeft=cardRef?.current?.offsetLeft
 
+const drop = document.getElementById(`drop_${index}`)
+console.log("azeaze",drop?.offsetHeight )
 const test = () =>{
 
 
+     let x :number=cardRef?.current?.offsetHeight; 
 
-    //const drop = document.getElementById(`drop_${index}`)
+    x = drop?.offsetHeight + cardRef?.current?.offsetHeight
+    //cardRef.current.style.height = x
 
-    console.log("cardHolder Width",cardRef?.current?.offsetWidth)
-    console.log("cardHolder left",cardRef?.current?.offsetLeft)
-    console.log("container Width",width)
-    console.log("container left",container?.current?.offsetLeft)
-    /* console.log(cardRef?.current?.offsetLeft,"drop",container?.current?.offsetLeft) */
-    return(500)
+
+    return(drop?.offsetHeight,cardRef?.current?.offsetHeight)
 }
+console.log(test())
    useEffect(() => {
     const handleClickOutside = (event:any) => {
      console.log(cardRef.current && show  && !cardRef.current?.contains(event.target))
@@ -33,37 +37,47 @@ const test = () =>{
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }); 
+
   return (
-    <div style={{height:show ? test() : 'fit-content'}} className="relative h-fit" onClick={()=>{setShow(!show);}} ref={cardRef}>
+    <div style={{
+      height: show ? `500px` : 'fit-content'
+    }} className={` `} onClick={()=>{setShow(!show);}} ref={cardRef}>
     <div className="flex flex-col gap-2 relative" >
 
       <div
        
         className="group py-5  w-full h-full gap-2   cursor-pointer  rounded-md relative  justify-center items-center flex flex-col shadow-shadowCard bg-white"
       >
-        <div className="absolute  bg-[#192839]  transition-all duration-300 group-hover:h-full group-hover:w-full  h-0 w-full bottom-0 z-[0] rounded-md"></div>
+  <div
+          className={`absolute transition-all duration-300 group-hover:h-full group-hover:w-full h-0 w-full bottom-0 z-0 rounded-md`}
+          style={{ backgroundColor: cardinfo.color }}
+        ></div>
         <div className="z-[4]  justify-center items-center flex flex-col  ">
           <div className="flex flex-col items-center">
             <span className="font-bold text-black text-2xl  group-hover:text-white transition-all duration-500">
-              ADKACH
+             {cardinfo.title}
             </span>
-            <span className="text-black font-playFait font-bold  group-hover:text-white transition-all duration-500">
+            {/* <span className="text-black font-playFait font-bold  group-hover:text-white transition-all duration-500">
               Worth 25 BC weekly
-            </span>
+            </span> */}
           </div>
           <div className="bg-[#FFE1EE] p-[10px] rounded-full">
             <img className="h-[50px] w-[50px]" src="../src/assets/OPPORTYNITY-1-1.webp" alt="" />
           </div>
-          <span className=" group-hover:text-white transition-all duration-500">voucher sales earnings</span>
-          <span className="self-end pr-4 group-hover:text-white transition-all duration-500">ReadMore</span>
+          <span className=" group-hover:text-white transition-all duration-500">Click to Know more</span>
+          <span className="self-end pr-7 group-hover:text-white transition-all duration-500">ReadMore</span>
         </div>
       </div>
 
-       <div  id={`drop_${index}`} style={{width:width, left:cardRef?.current?.offsetWidth * index * -1}}
-        className={`mr-9 transition-h duration-300  h-0 overflow-hidden ${show && "h-[300px] "} 
+        <div ref={descRef} id={`drop_${index}`} style={{width:width, left:-cardRefLeft}}
+        className={`mr-9 transition-h  duration-300 max-h-0 overflow-hidden ${show && "max-h-full "} 
         absolute top-full ws-[${width}px]  `}>
-         <div className="h-full border border-red-500" >
-          {`card ${index}`}
+         <div className="h-full p-9 " >
+          {
+            cardinfo.description.map((desc:string,i:number)=>{
+              return <p key={i}>- {desc} </p>
+            })
+          }
           </div> 
         </div>
     </div>
