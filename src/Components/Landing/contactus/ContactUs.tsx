@@ -97,13 +97,13 @@ export const ContactUs = () => {
         <div className=" pb-6">
           <h2 className="text-base font-semibold leading-7 text-gray-900">Reach to Us</h2>
           <p className="mt-1 text-sm leading-6 text-gray-600 ">
-            This information will be displayed  so be careful what you share.
+          Ces informations seront affichées alors faites attention à ce que vous partagez.
           </p>
 
           <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
             <div className="sm:col-span-full">
               <label htmlFor="name" className="block text-sm font-medium leading-6 text-gray-900">
-              votre Nom et Prenom
+              Votre Nom et Prenom
               </label>
               <div className="mt-2">
                 <div className="flex rounded-md shadow-sm ring-1 ring-inset
@@ -113,7 +113,7 @@ export const ContactUs = () => {
                     type="text"
                     name="name"
                     id="name"
-                    autoComplete="name"
+                    autoComplete="Nom et Prenom"
                     className="block pl-5 w-full flex-1 border-0 bg-transparent py-1.5  text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                     placeholder="name"
                     value={name}
@@ -136,7 +136,7 @@ export const ContactUs = () => {
                     id="phone"
                     autoComplete="phone"
                     className="block pl-5 w-full flex-1 border-0 bg-transparent py-1.5  text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
-                    placeholder="phone"
+                    placeholder= "Num de telephone:"
                     value={phone}
                   onChange={(e) => setphone(e.target.value)}
                   />
@@ -156,7 +156,7 @@ export const ContactUs = () => {
                     id="email"
                     autoComplete="email"
                     className="block pl-5 flex-1 border-0 bg-transparent py-1.5  text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
-                    placeholder="email"
+                    placeholder="E-mail"
                     value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   />

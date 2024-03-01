@@ -46,6 +46,10 @@ export const Routes = createBrowserRouter([
           path:"/login",
           element:<Login/>
         }
+        ,{
+          path:"/dash",
+          element:<Login/>
+        }
       ]
 
     },

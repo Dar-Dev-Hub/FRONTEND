@@ -7,7 +7,7 @@ export const navigation = [
   {name:"our Company",path:"/landing/our-company"},
   {name:"Contact Us",path:"/landing/contact-us"},
   {name:"Recrutement",path:"/landing/Recrutement"},
-  {name:"Login",path:"/login"},
+  // {name:"Login",path:"/login"},
 ]
 
 export const TopNavigation = () => {

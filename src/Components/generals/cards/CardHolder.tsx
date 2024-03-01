@@ -57,9 +57,7 @@ console.log(test())
             <span className="font-bold text-black text-2xl  group-hover:text-white transition-all duration-500">
              {cardinfo.title}
             </span>
-            {/* <span className="text-black font-playFait font-bold  group-hover:text-white transition-all duration-500">
-              Worth 25 BC weekly
-            </span> */}
+
           </div>
           <div className="bg-[#FFE1EE] p-[10px] rounded-full">
             <img className="h-[50px] w-[50px]" src="../src/assets/OPPORTYNITY-1-1.webp" alt="" />
@@ -70,9 +68,9 @@ console.log(test())
       </div>
 
         <div ref={descRef} id={`drop_${index}`} style={{width:width, left:-cardRefLeft}}
-        className={`mr-9 transition-h  duration-300 max-h-0 overflow-hidden ${show && "max-h-full "} 
+        className={`mr-5 transition-h  duration-300 max-h-0 overflow-hidden ${show && "max-h-full "} 
         absolute top-full ws-[${width}px]  `}>
-         <div className="h-full p-9 " >
+         <div className="h-full p-5 mb-6 " >
           {
             cardinfo.description.map((desc:string,i:number)=>{
               return <p key={i}>- {desc} </p>

@@ -13,7 +13,7 @@ export const Cards: React.FC<CardsProps> = ({ cardInfo }) => {
   const container = useRef(null);
 
   return (
-    <div className="h-fit w-full self-center px-20">
+    <div className="h-fit w-full self-center px-10">
       <div className="w-full h-fit py-5 mx-0 max-md:mx-5 bg-grasy-50">
         <div
           ref={container}
@@ -21,12 +21,13 @@ export const Cards: React.FC<CardsProps> = ({ cardInfo }) => {
           id="card_Container"
         >
           {cardInfo.map((card, i) => (
-            <CardHolder
-              container={container}
-              key={i}
-              index={i}
-              cardinfo={card}
-            />
+            <div key={i} className="h-fit w-full relative">
+              <CardHolder cardinfo={card} />
+              <div className="h-fit w-full p-5 text-white bg-grasy-900 absolute bottom-0 left-0">
+                {/* Add the description here */}
+                
+              </div>
+            </div>
           ))}
           {/* Part 2 */}
         </div>

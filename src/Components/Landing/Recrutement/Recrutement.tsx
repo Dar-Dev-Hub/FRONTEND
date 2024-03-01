@@ -1,146 +1,237 @@
-import Caroucel from '../../generals/caroucel/Caroucel'
-import { Curve } from '../../generals/curve/Curve'
-import { NetVerse } from '../../generals/netVerse'
-import {  OrdreList } from '../Landing'
-import { SideToSide } from '../../generals/sidetoside/SideToSide'
+import React, { useRef, useState } from 'react';
+import emailjs from '@emailjs/browser';
+
 export const Recrutement = () => {
-  return (
-    <>
-        <div className='relative
-            pt-[10px]
-           m-5
-            flex justify-center items-center flex-col overflow-hidden' >
 
-           
-        </div>
-        <SideToSide displ={ESPACE_RECRUTEMENT}/>
-        <SideToSide displ={Formateurs}/>
-        <SideToSide displ={Jeunes_Diplomes}/>
-        <SideToSide displ={Freelancers}/>
-        <SideToSide displ={Influenceurs}/>
-        <SideToSide displ={buisnessModel}/>
-        
+   
 
-              
-        </>
-  )
-}
-const buisnessModel = {
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [message, setMessage] = useState('');
+    const [phone, setPhone] = useState('');
     
-    title:  <span className='text-red-500 font-extrabold'>Netverse
-     </span>,
-    text:[
-        {   
-            text:  `Chez Netverse, nous croyons en la diversité des talents et des perspectives. Rejoignez-nous pour
-            faire partie d'une communauté dynamique et contribuez à façonner l'avenir de notre plateforme.`,
-        },
-        {
-            
-            text:`Nous avons hâte de découvrir les compétences uniques que vous pouvez apporter à notre équipe !`
-        },
-        
-        
-       
-    ],
-    classNames:"text-white justify-center  items-center relative",
-    sideImg:"https://adkach.com/wp-content/uploads/2022/08/OUR-APPS-1.png",
-   bgImage:"bg-niceword",
-   other: <div className=' 
-   absolute w-full h-full left-0 top-0 z-[-1] bg-[#2f2e36] 
- opacity-80' ></div>
-   
-}
-const Freelancers ={
-    title: <span >Freelancers et Prestataires de Services : <br /></span>,
-    text:[
-        {
-            text:  "- Si vous êtes un Freelancer capable de fournir des services exceptionnels, n'hésitez pas à déposer votre candidature en remplissant le formulaire."
-        },
-   
-    ],
-    bgImage:"bg-ourCompanySmartIdea",
-    classNames:" justify-start ml-4  items-start pl-5"
-}
-const Influenceurs ={
-    title: <span >Influenceurs dans les Médias Sociaux : <br /></span>,
-    text:[
-        {
-            text:  "- Si vous êtes un influenceur dans les médias sociaux avec une idée créative à partager, veuillez nous contacter directement. Nous sommes ouverts à collaborer avec des esprits influents et innovants."
-        },
-   
-    ],
-    bgImage:"bg-ourCompanySmartIdea",
-    classNames:" justify-start ml-4  items-start pl-5"
-}
+    const [attachment, setAttachment] = useState<File | null>(null); // Add type File | null
+ const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const file = e.target.files?.[0]; // Use optional chaining to handle null
+        if (file) {
+            setAttachment(file);
+        }
+    };
 
-const Formateurs ={
-    title: <span > Formateurs et Vendeurs de Produits <br /></span>,
-    text:[
-        {
-            text:  "- Si vous êtes un formateur et souhaitez commercialiser vos produits au sein de notre plateforme"
-        },
-        {
-            text:  "- remplir le formulaire de candidature. Vous pouvez joindre votre CV pour nous donner un perçu complet de votre expertise."
-        },    
-    ],
-    bgImage:"bg-ourCompanySmartIdea",
-    classNames:" justify-start ml-4  items-start pl-5"
-}
+    const handleSubmit = (e: { preventDefault: () => void; }) => {
+        e.preventDefault();
+        const Service_id = 'service_ol8z38n';
+        const template_id = 'template_glxh3eb';
+        const pukey = 'pIyd5ILH6N9Wn06zV';
 
-
-const Jeunes_Diplomes ={
-    title:"Jeunes Diplômés :",
-    text:[
-            {
-            text:"- Si vous êtes un jeune diplômé à la recherche d'une opportunité dans votre domaine, que ce soit en comptabilité, administration, commerce, marketing digital, étude de projet, marketing, infographie, développement, ou tout autre domaine, déposez votre CV. Nous accueillons tous les domaines d'expertise.",
-            }, 
-    ],
-    classNames:" justify-end  items-end pr-9",
-    bgImage:"bg-ourCompanySmartIdea",
-  }
-const ESPACE_RECRUTEMENT ={
-    title:"Espace Recrutement Netverse",
-    subtitle: <span className=' text-3xl   
-    '>
-        </span>,
-    text:[
-            {
-            text:"Bienvenue dans notre Espace Recrutement dédié aux esprits passionnés et talentueux qui souhaitent rejoindre l'aventure Netverse. Si vous vous trouvez dans l'une des catégories suivantes, nous vous invitons chaleureusement à explorer les opportunités qui s'offrent à vous :",
+        const templateform = {
+            from_name: name,
+            from_email: email,
+            to_name: 'Netverse',
+            message: message,
+            from_phone: phone,
+            attachment: attachment || ''
+        };
+        emailjs
+            .send(Service_id, template_id, templateform, pukey)
+            .then((response) => {
+                console.log('SUCCESS!', response);
+                setName('');
+                setEmail('');
+                setMessage('');
+                setPhone('');
+                setAttachment(null);
             },
-            
-    ],
-    footer: <button className='  
-            group zz w-fit  relative  self-center
-            bg-secondary overflow-hisdden
-            justify-center items-center flex' >
-      <div className=' z-[5] absolute  w-0 h-1 
-                  group-hover:h-full group-hover:w-full transition-all duration-500
-                bg-primaryy' >
-      </div>
-      <div className='text-xl px-10 py-4  group-hover:text-white transition-colors duration-500  font-semibold relative  z-10 h-full w-full whitespace-nowrap
-                '>more info
-      </div>
-    </button>,
-    sideImg:"https://adkach.com/wp-content/uploads/2022/08/STEPS.webp",
-    bgIxmage:"bg-subs-bg",
-    
-  }
+                (error) => {
+                    console.log('FAILED...', error.text);
+                },
+            );
+    };
 
 
-export const OurVision = ({displ}:any)=>{
-    return(
-        <div className="bg-ourVision  bg-no-repeat  relative z-5
-        bg-cover 
-        bg-center 
-       ">
-        <SideToSide displ={displ.part1}/>
-        <OrdreList displ={displ.part2}/>
-        
-        <div className=' 
-        absolute w-full h-full left-0 top-0 z-[0] bg-[#2f2e36] 
-        opacity-40' >
-        </div> 
+
+
+    return (
+        <div className='w-full mt-[90px] flex gap-9 py-2 px-10 max-xl:px-15 max-md:px-5 max-lg:px-5 max-md:flex-col '>
+            <div className="w-1/2 flex flex-col gap-5 font-md text-xl  max-md:w-full ">
+                <span className='text-2xl  relative after:block 
+            afer:content-[""]
+            after:absolute
+            after:w-1/3
+            after:h-[3px]
+            raduis-md
+            after:bg-red-500
+            ' >
+                    Espace Recrutement Netverse :</span>
+                <span className='text-2xl  relative after:block 
+            afer:content-[""]
+            after:absolute
+            after:w-1/3
+            after:h-[3px]
+            ' >
+                </span>
+                <span className='max-md:text-lg'>
+                    Bienvenue dans notre Espace Recrutement dédié aux esprits passionnés et talentueux qui souhaitent
+                    rejoindre l'aventure Netverse. Si vous vous trouvez dans l'une des catégories suivantes, nous vous
+                    invitons chaleureusement à explorer les opportunités qui s'offrent à vous :
+                </span>
+                <div className='flex flex-col'>
+                    <span className='max-md:text-lg'>  <span className='text-[#000000] font-bold'> 1. Formateurs et Vendeurs de Produits : </span><br /><p>
+                        <br />- Si vous êtes un formateur et souhaitez commercialiser vos produits au sein de notre plateforme,
+                        veuillez remplir le formulaire de candidature. Vous pouvez joindre votre CV pour nous donner un
+                        aperçu complet de votre expertise.
+                    </p></span>
+                    <span className='max-md:text-lg'> <span className='text-[#000000] font-bold'> <br />2. Jeunes Diplômés:</span>
+                        <p><br />- Si vous êtes un jeune diplômé à la recherche d'une opportunité dans votre domaine, que ce soit
+                            en comptabilité, administration, commerce, marketing digital, étude de projet, marketing,
+                            infographie, développement, ou tout autre domaine, déposez votre CV. Nous accueillons tous les
+                            domaines d'expertise.</p></span>
+                    <span className='max-md:text-lg'> <span className='text-[#000000] font-bold'> <br />3. Freelancers et Prestataires de Services :</span>
+                        <p><br />- Si vous êtes un Freelancer capable de fournir des services exceptionnels, n'hésitez pas à déposer
+                            votre candidature en remplissant le formulaire.</p></span>
+                    <span className='max-md:text-lg'> <span className='text-[#000000] font-bold'> <br />4. Influenceurs dans les Médias Sociaux :</span>
+                        <p><br />- Si vous êtes un influenceur dans les médias sociaux avec une idée créative à partager, veuillez
+                            nous contacter directement. Nous sommes ouverts à collaborer avec des esprits influents et
+                            innovants.</p></span>
+
+                </div>
+
+                <span className='max-md:text-lg'>
+                    Chez Netverse, nous croyons en la diversité des talents et des perspectives. Rejoignez-nous pour
+                    faire partie d'une communauté dynamique et contribuez à façonner l'avenir de notre plateforme.
+                    Nous avons hâte de découvrir les compétences uniques que vous pouvez apporter à notre équipe !
+                </span>
+            </div>
+            <div className="w-1/2 max-md:w-full max-md:text-2xl max-md:border-y border-black p-5 ">
+
+                <form className='w-full' onSubmit={handleSubmit}>
+                    <div className="space-y-6">
+                        <div className=" pb-6">
+                            <h2 className="text-base font-semibold leading-7 text-gray-900">Reach to Us</h2>
+                            <p className="mt-1 text-sm leading-6 text-gray-600 ">
+                                Ces informations seront affichées alors faites attention à ce que vous partagez.
+                            </p>
+
+                            <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+                                <div className="sm:col-span-full">
+                                    <label htmlFor="name" className="block text-sm font-medium leading-6 text-gray-900">
+                                        votre Nom et Prenom
+                                    </label>
+                                    <div className="mt-2">
+                                        <div className="flex rounded-md shadow-sm ring-1 ring-inset
+                 ring-gray-300 focus-within:ring-2 focus-within:ring-inset
+                  focus-within:ring-indigo-600 max-w-full">
+                                            <input
+                                                type="text"
+                                                name="name"
+                                                id="name"
+                                                autoComplete="name"
+                                                className="block pl-5 w-full flex-1 border-0 bg-transparent py-1.5  text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                                                placeholder="name"
+                                                value={name}
+                                                onChange={(e) => setName(e.target.value)}
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="sm:col-span-full">
+                                    <label htmlFor="name" className="block text-sm font-medium leading-6 text-gray-900">
+                                        Num de telephone:
+                                    </label>
+                                    <div className="mt-2">
+                                        <div className="flex rounded-md shadow-sm ring-1 ring-inset
+                 ring-gray-300 focus-within:ring-2 focus-within:ring-inset
+                  focus-within:ring-indigo-600 max-w-full">
+                                            <input
+                                                type="text"
+                                                name="phone"
+                                                id="phone"
+                                                autoComplete="phone"
+                                                className="block pl-5 w-full flex-1 border-0 bg-transparent py-1.5  text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                                                placeholder="phone"
+                                                value={phone}
+                                                onChange={(e) => setPhone(e.target.value)}
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="sm:col-span-full">
+                                    <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
+                                        Email
+                                    </label>
+                                    <div className="mt-2">
+                                        <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 
+                focus-within:ring-inset focus-within:ring-indigo-600 max-w-full">
+                                            <input
+                                                type="text"
+                                                name="email"
+                                                id="email"
+                                                autoComplete="email"
+                                                className="block pl-5 flex-1 border-0 bg-transparent py-1.5  text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                                                placeholder="email"
+                                                value={email}
+                                                onChange={(e) => setEmail(e.target.value)}
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div className="col-span-full">
+                                    <label htmlFor="about" className="block text-sm font-medium leading-6 text-gray-900">
+                                        Your message
+                                    </label>
+                                    <div className="mt-2">
+                                        <textarea
+                                            id="about"
+                                            name="message"
+                                            rows={3}
+                                            className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                            value={message}
+                                            onChange={(e) => setMessage(e.target.value)}
+                                        />
+                                    </div>
+
+
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div className="sm:col-span-full">
+                            <label htmlFor="attachment" className="block text-sm font-medium leading-6 text-gray-900">
+                                Attachment
+                            </label>
+                            <div className="mt-2">
+                                <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 
+focus-within:ring-inset focus-within:ring-indigo-600 max-w-full">
+                                    <input
+                                    type="file"
+                                    name="attachment"
+                                    id="attachment"
+                                    className="block pl-5 w-full flex-1 border-0 bg-transparent py-1.5  text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                                    onChange={handleFileChange} // Use onChange event to capture file selection
+                                />
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+
+                    <div className="mt-1 flex items-center justify-center bg-primaryy ">
+                        <button type="submit" className="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                            Submit
+                        </button>
+                    </div>
+                </form>
+
+
+
+
+            </div>
         </div>
-        
-        )
+    )
 }

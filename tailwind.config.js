@@ -22,9 +22,9 @@ export default {
         'bg-2': "url(./src/assets/bg-2.png.webp)",
         'contact-bg': "url(./src/assets/contact-bg.jpg)",
         "test": "url(./src/assets/bg-2.png.webp)",
-        "ourCompanySmartIdea": "url(https://adkach.com/wp-content/uploads/2022/08/SMART-IDEA-23.webp)",
-        "niceword": "url(https://adkach.com/wp-content/uploads/2018/02/card_app_BG_10-percent.jpg)",
-        "ourVision": "url(https://adkach.com/wp-content/uploads/2022/08/OUR-VISION-23.webp)"
+        "ourCompanySmartIdea": "url(https://raw.githubusercontent.com/jassemb/netverseimage/main/SMART-IDEA-23.webp)",
+        "niceword": "url(https://github.com/jassemb/netverseimage/blob/main/card_app_BG_10-percent.jpg?raw=true)",
+        "ourVision": "url(https://raw.githubusercontent.com/jassemb/netverseimage/main/OUR-VISION-23.webp)"
       },
       boxShadow: {
         activeCaroucel: ' 0 0 0px 6px rgba(0, 0, 0, 0.1),0 0 0px 12px rgba(0, 0, 0, 0.1)',

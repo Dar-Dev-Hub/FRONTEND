@@ -11,18 +11,21 @@ const YouTubePlayer: React.FC<YouTubePlayerProps> = () => {
   const videoIds = ['HBjPq4vam9k', 'dAJNMVbAMlQ', 'AaDNa7jkUVw','eu0jERfrbvA'];
 
   return (
-    <div className="App">
+    <div className="App ">
     
       <Carousel
-        className="crsl"
+
+        className="relative h-full w-full mb-0"
         autoPlay
         infiniteLoop
         centerMode
         interval={10000}
-
+        emulateTouch
+        swipeScrollTolerance={50}
+        centerSlidePercentage={30}
       >
         {videoIds.map((videoId) => (
-          <div key={videoId} className="m-0">
+          <div key={videoId} className="h-full w-full object-cover">
             <YouTube videoId={videoId} />
           </div>
         ))}

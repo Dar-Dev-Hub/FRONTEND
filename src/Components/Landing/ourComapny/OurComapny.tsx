@@ -49,7 +49,7 @@ const buisnessModel = {
            
         ],
         classNames:"text-white justify-center  items-center relative",
-        sideImg:"https://adkach.com/wp-content/uploads/2022/08/OUR-APPS-1.png",
+        sideImg:"",
        bgImage:"bg-niceword",
        other: <div className=' 
        absolute w-full h-full left-0 top-0 z-[-1] bg-[#2f2e36] 
@@ -99,7 +99,10 @@ const smartIdea ={
 }
 
 const ImagesCaroucel = [
+    "https://github.com/jassemb/netverseimage/blob/main/cover2.png?raw=true" ,
+    "https://github.com/jassemb/netverseimage/blob/main/cover.png?raw=true",
     "https://github.com/jassemb/netverseimage/blob/main/phT.png?raw=true" ,
+    "https://github.com/jassemb/netverseimage/blob/main/tlakB2.png?raw=true" ,
     "https://github.com/jassemb/netverseimage/blob/main/cover.png?raw=true",
     "https://github.com/jassemb/netverseimage/blob/main/c1.jpg?raw=true" ,
     "https://github.com/jassemb/netverseimage/blob/main/tlakB.png?raw=true" ,
@@ -147,7 +150,7 @@ const whoareWe ={
                 '>more info
       </div>
     </button>,
-    sideImg:"https://adkach.com/wp-content/uploads/2022/08/STEPS.webp",
+    sideImg:"",
     bgIxmage:"bg-subs-bg",
     
   }
