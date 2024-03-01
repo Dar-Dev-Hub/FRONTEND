@@ -60,7 +60,7 @@ console.log(test())
 
           </div>
           <div className="bg-[#FFE1EE] p-[10px] rounded-full">
-            <img className="h-[50px] w-[50px]" src="../src/assets/OPPORTYNITY-1-1.webp" alt="" />
+            <img className="h-[50px] w-[50px]" src="https://raw.githubusercontent.com/jassemb/netverseimage/main/OPPORTYNITY-1-1.webp" alt="" />
           </div>
           <span className=" group-hover:text-white transition-all duration-500">Click to Know more</span>
           <span className="self-end pr-7 group-hover:text-white transition-all duration-500">ReadMore</span>
