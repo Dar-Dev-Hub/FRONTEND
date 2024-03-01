@@ -77,16 +77,21 @@ export const ContactUsLanding = () => {
                 flex flex-col gap-6
                 items-center
                 py-5
-                
                 max-md:bg-red-500
                 ">
-            <h1 className='text-4xl text-center' >Interested To <br />
-              Digging Dipper?</h1 >
+            <h1 className='text-4xl text-center' >Intéressé à  <br />
+            creuser plus profondément ?</h1 >
   
-            <span className=' text-center'>
-              We shed light on the basic economic areas related to the company’s activity, by monitoring statistics, and analyzing important data about it, to provide our business partners with what helps them understand the company’s strategy and its path
+            <span className=' text-center text-xs	'>
+            Nous fournissons des opportunités tangibles en proposant des packages de formation et
+d'outils de travail concrets. Dès votre inscription, choisissez parmi nos packs de démarrage,
+chacun offrant des formations adaptées à vos besoins, du niveau débutant à l'expert.
+Chez Netverse, l'aventure commence virtuellement, mais les bénéfices sont bien réels.
+Rejoignez-nous, parrainez d'autres partenaires et partagez les succès d'un réseau de marketing unique.
+Chez Netverse, l'aventure commence virtuellement, mais les bénéfices sont bien réels.
+Rejoignez-nous, parrainez d'autres partenaires et partagez les succès d'un réseau de marketing unique.
             </span>
-            <Link to='/contact-us' className='   group zz w-fit  relative 
+            <Link to='/landing/contact-us' className='   group zz w-fit  relative 
                   bg-transparent border 
                   hover:border-primaryy
                   px-10 py-4 rounded-[30px]

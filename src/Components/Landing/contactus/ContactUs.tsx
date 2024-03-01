@@ -1,9 +1,50 @@
+import React, { useRef, useState } from 'react';
+import emailjs from '@emailjs/browser';
 
 export const ContactUs = () => {
+
+
+ 
+    const [name, setName] = useState('');
+    const [email, setEmail] =useState('') ;
+    const [message, setMessage] = useState(' ');
+    const [phone, setphone] = useState(' ');
+
+    const handleSubmit =(e: { preventDefault: () => void; }) =>{
+      e.preventDefault();
+      const Service_id='service_ol8z38n';
+      const template_id = 'template_glxh3eb';
+      const pukey='pIyd5ILH6N9Wn06zV';
+
+      const templateform = {
+        from_name: name,
+        from_email: email,
+        to_name: 'Netverse',
+        message: message,
+        from_phone: phone,
+      };
+      emailjs
+      .send(Service_id,template_id,templateform,pukey)
+      .then((response) => {
+          console.log('SUCCESS!',response);
+          setName('');
+          setEmail('');
+          setMessage('');
+          setphone('');
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+        },
+      );
+  };
+    
+
+  
+
   return (
     <div className='w-full mt-[90px] flex gap-9 py-2 px-10 max-xl:px-15 max-md:px-5 max-lg:px-5 max-md:flex-col '>
          <div className="w-1/2 flex flex-col gap-5 font-md text-xl  max-md:w-full ">
-            <span className='text-2xl  relative after:block 
+         <span className='text-2xl  relative after:block 
             afer:content-[""]
             after:absolute
             after:w-1/3
@@ -11,44 +52,58 @@ export const ContactUs = () => {
             raduis-md
             after:bg-red-500
             ' >
-                Central Office
-            </span>
+            Contactez-nous - Siège Central de Netverse :</span>
+            <span className='text-2xl  relative after:block 
+            afer:content-[""]
+            after:absolute
+            after:w-1/3
+            after:h-[3px]
+            ' >
+            Bienvenue au siège </span>
             <span className='max-md:text-lg'>
-            The company is registered in the Kingdom of Morocco under the name GLOBAL ADKACH SARL and is licensed by the Chamber of Commerce and Industry of the Tangier City Region, Morocco.
+            central de Netverse, situé dans les bureaux 610, 6ème étage du centre de
+            coworking Regus, au lot B-17 de l'immeuble New Tower 1003, Centre Urbain Nord, Tunis.
+            Coordonnées :
             </span>
             <div className='flex flex-col'>
-            <span className='max-md:text-lg'> Commercial Register Number <span className='text-[#d23a1e] font-bold'> (CRN): ****** </span> </span>
-            <span className='max-md:text-lg'>Tax ID number <span className='text-[#d23a1e] font-bold'> (EIN): ****** </span> </span>
+            <span className='max-md:text-lg'>  <span className='text-[#000000] font-bold'> - Téléphone Fixe : </span> 71 134 534</span>
+            <span className='max-md:text-lg'> <span className='text-[#000000] font-bold'> - Téléphone Fixe :</span> 56565030 </span>
             </div>
             <span className='max-md:text-lg'>
-            License for Data Collection and Processing issued by the National
-Agency for Telecommunications Regulation  <span className='text-[#d23a1e] font-bold'>  (ANRT) of the Kingdom of Morocco under number: 19902 </span>
+            <span className='text-[#000000] font-bold'>- E-mail : netverse2024@gmail.com</span>
             </span>  
             <span className='max-md:text-lg'>
-            Trademark registration on a global level with the Moroccan Office for Industrial and Commercial Property <span className='text-[#d23a1e] font-bold'> (OMPIC) under number:254982 </span>
+             <span className='text-[#000000] font-bold'> Horaires d'Ouverture : </span>
             </span>
             <span className='max-md:text-lg'>
-            +999 999 999 999
+            - Du lundi au vendredi : 9h à 17h
 
             </span>
             <span className='max-md:text-lg'>
-                Adress *** *** ***
+            - Samedi : 9h à 13h
             </span>
+            <span className='max-md:text-lg'>
+            N'hésitez pas à nous contacter pendant ces heures pour toutes vos questions, commentaires ou
+            préoccupations. Pour une communication instantanée, utilisez le formulaire de contact ci-dessous.
+            Restez informés sur les dernières actualités de Netverse en nous suivant sur nos réseaux sociaux.
+            </span>
+            <span className='text-[#d23a1e] font-bold'> Nous sommes impatients de vous accueillir et de partager avec vous l'expérience Netverse.</span>
+
         </div>
         <div className="w-1/2 max-md:w-full max-md:text-2xl max-md:border-y border-black p-5 ">
 
-    <form className='w-full'>
+    <form className='w-full'onSubmit={handleSubmit}>
       <div className="space-y-6">
         <div className=" pb-6">
           <h2 className="text-base font-semibold leading-7 text-gray-900">Reach to Us</h2>
           <p className="mt-1 text-sm leading-6 text-gray-600 ">
-            This information will be displayed  so be careful what you share.
+          Ces informations seront affichées alors faites attention à ce que vous partagez.
           </p>
 
           <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
             <div className="sm:col-span-full">
               <label htmlFor="name" className="block text-sm font-medium leading-6 text-gray-900">
-                Name
+              Votre Nom et Prenom
               </label>
               <div className="mt-2">
                 <div className="flex rounded-md shadow-sm ring-1 ring-inset
@@ -58,9 +113,32 @@ Agency for Telecommunications Regulation  <span className='text-[#d23a1e] font-b
                     type="text"
                     name="name"
                     id="name"
-                    autoComplete="name"
+                    autoComplete="Nom et Prenom"
                     className="block pl-5 w-full flex-1 border-0 bg-transparent py-1.5  text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                     placeholder="name"
+                    value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="sm:col-span-full">
+              <label htmlFor="name" className="block text-sm font-medium leading-6 text-gray-900">
+                Num de telephone:
+              </label>
+              <div className="mt-2">
+                <div className="flex rounded-md shadow-sm ring-1 ring-inset
+                 ring-gray-300 focus-within:ring-2 focus-within:ring-inset
+                  focus-within:ring-indigo-600 max-w-full">
+                  <input
+                    type="text"
+                    name="phone"
+                    id="phone"
+                    autoComplete="phone"
+                    className="block pl-5 w-full flex-1 border-0 bg-transparent py-1.5  text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                    placeholder= "Num de telephone:"
+                    value={phone}
+                  onChange={(e) => setphone(e.target.value)}
                   />
                 </div>
               </div>
@@ -78,7 +156,9 @@ Agency for Telecommunications Regulation  <span className='text-[#d23a1e] font-b
                     id="email"
                     autoComplete="email"
                     className="block pl-5 flex-1 border-0 bg-transparent py-1.5  text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
-                    placeholder="email"
+                    placeholder="E-mail"
+                    value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
               </div>
@@ -92,10 +172,11 @@ Agency for Telecommunications Regulation  <span className='text-[#d23a1e] font-b
               <div className="mt-2">
                 <textarea
                   id="about"
-                  name="about"
+                  name="message"
                   rows={3}
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                  defaultValue={''}
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)} 
                 />
               </div>
 
@@ -110,13 +191,10 @@ Agency for Telecommunications Regulation  <span className='text-[#d23a1e] font-b
       
       </div>
 
-      <div className="mt-1 flex items-center justify-center ">
-        <button
-          type="submit"
-          className="rounded-md bg-primaryy px-7 py-2 text-lg font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-        >
-          Submit
-        </button>
+      <div className="mt-1 flex items-center justify-center bg-primaryy ">
+      <button type="submit" className="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+  Submit
+</button>
       </div>
     </form>
 

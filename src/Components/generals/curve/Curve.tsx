@@ -5,7 +5,7 @@ interface CurveProps {
     className?:string;
 }
 
-export const Curve = ({ height = "90%", width = "132%", color = "rgb(21 96 189 / 64%)",className }: CurveProps) => {
+export const Curve = ({ height = "90%", width = "132%", color = "rgb(225 225 225 / 64%)",className }: CurveProps) => {
     const dynamicClassName = `curve absolute
                 top-0 
                 right-[0%] 
